@@ -1,0 +1,57 @@
+#2025-07-16 
+  use rock_sql;
+
+
+-- rename 
+rename table ecommerce_dataset_updated to e_datase;
+rename table e_datase to e_dataset;
+
+
+-- fetch the records ;- 
+select * from emp_sal;
+select * from students;
+select * from e_dataset;
+
+-- Find the  maximum sales from final_price(R.s)
+
+select * from e_dataset where `Final_Price(Rs.)` is maximum
+
+select max(`Final_Price(Rs.)`),min(`Final_Price(Rs.)`) from e_dataset;
+-- total number of records 
+select count(*) from e_dataset;
+-- total number of recods but this is also ingour null value 
+select count(`Discount (%)`) from e_dataset;
+
+describe e_dataset;
+
+select max(`Final_Price(Rs.)`),min(`Final_Price(Rs.)`) ,`Discount (%)` from e_dataset;
+
+
+-- total number of category 
+select category , count(Category) as total 
+from e_dataset group by Category order by total desc;
+
+-- find the max, min  ,avg , count , sum for each Category 
+
+select category, count(`Price (Rs.)`)  total_price ,
+avg(`Price (Rs.)`) as avg_price ,
+max(`Price (Rs.)`) as max_price,
+min(`Price (Rs.)`) as min_price,
+sum(`Price (Rs.)`) as t_price,
+
+count(`Discount (%)`)  as total_dicount,
+max(`Discount (%)`) ,
+min(`Discount (%)`) ,
+avg(`Discount (%)`) ,
+sum(`Discount (%)`),
+
+count(`Final_Price(Rs.)`)  as total_final_price,
+max(`Final_Price(Rs.)`) ,
+min(`Final_Price(Rs.)`) ,
+avg(`Final_Price(Rs.)`),
+sum(`Final_Price(Rs.)`)
+from e_dataset
+
+group by category 
+
+
