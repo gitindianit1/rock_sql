@@ -54,4 +54,56 @@ from e_dataset
 
 group by category 
 
+use my_db;
+show tables;
+
+select * from products ;
+select * from orders;
+select * from users;
+
+-- Join 
+-- left join, right join, inner join => join , selft join ,
+-- cross join , outer join
+
+-- left join ( all info from left table + matching records from right table)
+select * from orders;
+select * from users;
+
+select u.* , o.*
+from users as u 
+Left join orders as o  
+on o.UserID = u.UserID
+
+-- group by based on each user Id 
+
+select u.UserId,count(Quantity) , sum(Quantity),avg(Quantity)
+from users as u 
+Left join orders as o  
+on o.UserID = u.UserID
+group by u.UserId
+
+
+-- right join (  ( all info from right table + matching records from left table)
+
+select u.* , o.*
+from users as u 
+right join orders as o 
+on o.UserID = u.UserID
+
+
+select u.* , o.*
+from orders as o
+right join users as u
+on u.UserId = o.UserId
+
+
+-- Inner JOin ( Exact match from both table ) 
+
+select u.* , o.*
+from users as u 
+inner join orders as o
+on o.UserID = u.UserID
+
+--  from => join => where => group by => having => select => order by => limit or offset
+
 
