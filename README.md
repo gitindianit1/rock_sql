@@ -14,3 +14,18 @@ ________________________________________________________________________________
 ✅ Automation – schedule and reuse SQL scripts
 ✅ Better Control – especially with large datasets
 ____________________________________
+
+
+
+/*
+Enter your query here.
+*/
+
+-- students => Id, Name,marks 
+
+-- Grade => Grade, min_mark , max_Mark
+
+-- grade lower than 8 
+-- order by desc grade 
+
+-- 8-10 => order by name
