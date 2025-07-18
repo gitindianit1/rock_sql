@@ -29,3 +29,9 @@ Enter your query here.
 -- order by desc grade 
 
 -- 8-10 => order by name
+
+
+
+1. 2025 - 07 - 18
+   https://www.kaggle.com/datasets/smayanj/e-commerce-transactions-dataset
+
